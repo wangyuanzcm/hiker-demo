@@ -102,6 +102,11 @@
     "build":"rm -rf ./dist && parcel build"
   },
   "source": ["src/index.html", "src/webRTC/index.html"],
+  "targets": {
+    "default": {
+      "publicUrl": "/hiker-demo"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wangyuanzcm/hiker-demo.git"
