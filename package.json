@@ -98,17 +98,14 @@
     "weak-lru-cache": "^1.2.2"
   },
   "scripts": {
-    "build-webTRC":"rm -rf ./docs && parcel build webRTC/webTRC.html --dist-dir ./docs"
+    "start":"parcel",
+    "build":"rm -rf ./dist && parcel build"
   },
+  "source": ["src/index.html", "src/webRTC/index.html"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wangyuanzcm/hiker-demo.git"
   },
-    "targets": {
-      "default": {
-        "distDir": "./docs"
-      }
-    },
   "keywords": [],
   "author": "",
   "license": "ISC",
