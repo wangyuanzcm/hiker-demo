@@ -18,6 +18,14 @@ startBtn.addEventListener('click', () => {
       .then(gotDisplayStream, onErr);
 });
 
+function showMsg(msg, error) {
+    const msgEle = document.querySelector('#msg');
+    msgEle.innerHTML += `<p>${msg}</p>`;
+    if (typeof error !== 'undefined') {
+      console.error(error);
+    }
+  }
+
 // 拿到屏幕数据流
 function gotDisplayStream(stream) {
   startBtn.disabled = true;
@@ -36,13 +44,7 @@ function onErr(error) {
   showMsg(`getDisplayMedia on err: ${error.name}`, error);
 }
 
-function showMsg(msg, error) {
-  const msgEle = document.querySelector('#msg');
-  msgEle.innerHTML += `<p>${msg}</p>`;
-  if (typeof error !== 'undefined') {
-    console.error(error);
-  }
-}
+
 
 if ((navigator.mediaDevices && 'getDisplayMedia' in navigator.mediaDevices)) {
   startBtn.disabled = false;
@@ -94,11 +96,7 @@ function handleDataAvailable(event) {
   }
 }
 
-function showMsg(msg) {
-  console.log(msg);
-  var msgEle = document.querySelector('div#msg');
-  msgEle.innerHTML += "<p>" + msg + "</p>";
-}
+
 
 // 找到支持的格式
 function getSupportedMimeTypes() {

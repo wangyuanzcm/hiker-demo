@@ -104,6 +104,11 @@
     "type": "git",
     "url": "git+https://github.com/wangyuanzcm/hiker-demo.git"
   },
+    "targets": {
+      "default": {
+        "distDir": "./docs"
+      }
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
