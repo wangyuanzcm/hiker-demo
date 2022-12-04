@@ -15,5 +15,5 @@
 ## 构建
 
 ```
-    parcel build src/index.html
+    npm run build-xxx // 比如: npm run build-webTRC
 ```
