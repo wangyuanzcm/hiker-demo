@@ -9,6 +9,7 @@
     "doc": "docs"
   },
   "dependencies": {
+    "ws": "^8.11.0",
     "abortcontroller-polyfill": "^1.7.5",
     "base-x": "^3.0.9",
     "boolbase": "^1.0.0",
@@ -98,11 +99,18 @@
     "weak-lru-cache": "^1.2.2"
   },
   "scripts": {
-    "start":"parcel",
-    "watch":"parcel watch",
-    "build":"rm -rf ./dist && parcel build"
+    "start": "parcel",
+    "watch": "parcel watch",
+    "build": "rm -rf ./dist && parcel build"
   },
-  "source": ["src/index.html", "src/webRTC/index.html"],
+  "source": [
+    "src/index.html",
+    "src/webRTC/index.html",
+    "src/rrweb/index.html",
+    "src/rrweb/player.html",
+    "src/ws-rrweb/send.html",
+    "src/ws-rrweb/reception.html"
+  ],
   "targets": {
     "default": {
       "publicUrl": "/hiker-demo"

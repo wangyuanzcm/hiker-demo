@@ -1,5 +1,6 @@
 var fs = require('fs')
 var path = require('path')
+var url = require('url')
 
 // Workaround to fix webpack's build warnings: 'the request of a dependency is an expression'
 var runtimeRequire = typeof __webpack_require__ === 'function' ? __non_webpack_require__ : require // eslint-disable-line
@@ -44,7 +45,7 @@ load.path = function (dir) {
 
   var platformPackage = (packageName[0] == '@' ? '' : '@' + packageName + '/') + packageName + '-' + platform + '-' + arch
   try {
-    var prebuildPackage = path.dirname(require('module').createRequire(path.join(dir, 'package.json')).resolve(platformPackage))
+    var prebuildPackage = path.dirname(require('module').createRequire(url.pathToFileURL(path.join(dir, 'package.json'))).resolve(platformPackage))
     return resolveFile(prebuildPackage)
   } catch(error) {}
 
