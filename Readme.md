@@ -33,3 +33,5 @@
 本项目内auth文件夹下是服务器证书，由于是测试环境，所以直接放代码仓里面了，我随便生成的，参考http://www.51testing.com/html/10/n-7792310.html?nomobile=1
 
 1. ws和rrweb使用websocket实现类似直播功能
+    由于https协议的链接的话只支持wss协议，所以这里如果想变成wss协议的话需要本地服务器配置nginx代理
+    

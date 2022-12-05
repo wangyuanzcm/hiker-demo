@@ -1,14 +1,12 @@
 // 获得 WebSocketServer 类型
 var WebSocketServer = require("ws").Server;
 var WebSocket = require("ws");
-var readFileSync = require("fs").readFileSync;
-
 // 创建 WebSocketServer 对象实例，
 // 监听指定端口
 var wss = new WebSocketServer({
   port: 3600,
-  cert: readFileSync("../../auth/cert.pem"),
-  key: readFileSync("../../auth/key.pem"),
+//   cert: readFileSync("../../auth/cert.pem"),
+//   key: readFileSync("../../auth/key.pem"),
 });
 // 创建保存所有已连接到服务器的客户端对象的数组
 // 为服务器添加 connection 事件监听，
