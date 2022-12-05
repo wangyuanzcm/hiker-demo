@@ -99,6 +99,7 @@
   },
   "scripts": {
     "start":"parcel",
+    "watch":"parcel watch",
     "build":"rm -rf ./dist && parcel build"
   },
   "source": ["src/index.html", "src/webRTC/index.html"],

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>record</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rrweb@latest/dist/rrweb.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/rrweb@latest/dist/rrweb.min.js"></script>
+    <script src="https://hcsy.gitee.io/htest/CDN/jquery-1.11.1.min.js"></script>
+    <style>.pre li {
+  clear: both;
+  float: left;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+}
+
+button {
+  height: 36px;
+  width: 150px;
+  border: 0;
+  border-radius: 5px;
+  line-height: 36px;
+}
+
+input[type="text"] {
+  height: 36px;
+  width: 200px;
+  text-indent: 7px;
+  line-height: 36px;
+}
+
+</style>
+</head>
+
+<body>
+    <button type="button" onclick="handleStartRecord()">开始录制</button>
+    <h1>测试</h1>
+    <br>
+    <div>
+        <label for="key">标题</label> <input type="text" name="key" id="key"> <button type="button" onclick="changeColor()">查询</button>
+        <span id="msg"></span>
+    </div>
+    <h2>示例</h2>
+    <ul>
+        <li><label for="">QQ号：</label> <span></span></li>
+        <li><label for="">微信号：</label> <span></span></li>
+        <li><label for="">手机号：</label> <span></span></li>
+        <li><label for="">身份证：</label> <span></span></li>
+    </ul>
+    <hr>
+    <h2>记录</h2>
+    <ul class="pre">
+        <li><label for="">微信号：</label> <span>xxxx</span></li>
+        <li><label for="">微信号：</label> <span>xxxx</span></li>
+        <li><label for="">微信号：</label> <span>xxxx</span></li>
+    </ul>
+    <script>function handleStartRecord() {
+    var events = [];
+    rrweb.record({
+        emit (event) {
+            // 将 event 存入 events 数组中
+            events.push(event);
+        }
+    });
+    // save 函数用于将 events 发送至后端存入，并重置 events 数组
+    function save() {
+        const body = JSON.stringify({
+            events
+        });
+        localStorage.setItem("rrweb", body);
+    }
+    // 每 10 秒调用一次 save 方法，避免请求过多
+    setInterval(save, 3000);
+}
+function changeColor() {
+    var key = $("#key").val();
+    var n = 0;
+    $(".pre").find("li").each(function(i, v) {
+        if ($(v).html().indexOf(key) > -1 && key) {
+            $(v).css("color", "red");
+            n += 1;
+        } else $(v).css("color", "black");
+        $("#msg").html("命中 " + n + " 个");
+    });
+}
+
+</script>
+<script src="/hiker-demo/rrweb.04ca7686.js"></script></body>
+
+</html>
