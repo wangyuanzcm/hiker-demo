@@ -99,7 +99,7 @@
     "weak-lru-cache": "^1.2.2"
   },
   "scripts": {
-    "start": "parcel",
+    "start": "rm -rf ./dist &&parcel",
     "watch": "parcel watch",
     "build": "rm -rf ./dist && parcel build"
   },
