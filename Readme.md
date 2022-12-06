@@ -38,5 +38,11 @@
 2.  在使用chii进行调试的时候注意两点：
     1. 使用taobao源进行安装
     npm install chii -g
-    2. 注意使用wss
+    2. 注意script参数
+    <script src="//192.168.0.103:8080/target.js" embedded="false"></script>
+    embedded 为false则在服务端单独打开调试页面，否则在客户端增加一个iframe标签
+    3. 区分环境适应https或http
+    如果需要调试的页面使用的是http协议，则
+    chii start -p 8080
+    如果需要调试的页面使用的是https协议，则
     chii start --https --ssl-cert ./cert.pem --ssl-key ./key.pem
