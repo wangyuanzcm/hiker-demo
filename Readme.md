@@ -25,6 +25,7 @@
 3. 验证rrweb使用websocket实现直播模式，注意需要开启ws服务器
     使用方法：
         先运行node server.js打开websocket服务，然后打开send和reception页面，点击send页面的开始录制即可
+4. chii远程调试工具验证
 
 
 # 服务列表  
@@ -34,4 +35,8 @@
 
 1. ws和rrweb使用websocket实现类似直播功能
     由于https协议的链接的话只支持wss协议，所以这里如果想变成wss协议的话需要本地服务器配置nginx代理
-    
+2.  在使用chii进行调试的时候注意两点：
+    1. 使用taobao源进行安装
+    npm install chii -g
+    2. 注意使用wss
+    chii start --https --ssl-cert ./cert.pem --ssl-key ./key.pem
