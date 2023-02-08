@@ -26,6 +26,17 @@
     使用方法：
         先运行node server.js打开websocket服务，然后打开send和reception页面，点击send页面的开始录制即可
 4. chii远程调试工具验证
+5. debugger 前端实用工具集合
+    anyproxy  代理工具
+    chii  远程调试工具
+    sourcemap  线上代码查看
+    <!-- Playwright 自动化代码生成 -->
+    x-state 页面逻辑生成，通过state与组件库绑定，可以实现快速搭建页面
+    url encode
+    json格式化
+    base64
+    时间戳
+
 
 
 # 服务列表  
